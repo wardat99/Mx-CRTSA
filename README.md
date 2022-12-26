@@ -1,7 +1,7 @@
 # Mx-CRTSA
 This paper is under review
 
-Code for the paper "Multiplex networks, optimization, low-rank representation, tensor decomposition, spectral clustering".
+Code for the paper "Discovering Community structure in Multiplex Networks via a Co-regularized Robust Tensor-based Spectral Approach".
 
 
 # Required toolboxes:
