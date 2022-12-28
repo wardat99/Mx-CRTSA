@@ -5,13 +5,13 @@ warning off;
 addpath('dataset','functions');
 load('myCELEGANS.mat')
 
-mu = 0.01;              %best at   0.01 nmi=0.5174
+gamma = 0.01;              %best at   0.01 nmi=0.5174
 lambda = 0.02;          %best at 0.02
 
 for i=1:10
     
     fprintf('----Mx-CRTSA start, attempt number %d--------\n', i);
-[Plabel,Timecost(i)] = coregMRTSC(A,mu,lambda,numClust);
+[Plabel,Timecost(i)] = MxCRTSA(A,gamma,lambda,numClust);
    fprintf('----Mx-CRTSA end, attempt number %d--------\n', i);
 acc(i) = ClusteringMeasure(Plabel, truth);
         [~, nmi(i),~] = compute_nmi(truth,Plabel);

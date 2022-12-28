@@ -5,12 +5,12 @@ warning off;
 addpath('dataset','functions');
 load('myWiki.mat')
   
-mu = 0.04;                  %best at 0.04  nmi= 0.5719
+gamma = 0.04;                  %best at 0.04  nmi= 0.5719
 lambda = 0.5;               %best at 0.5
-for i=1:10
+for i=1:1
     
     fprintf('----Mx-CRTSA start, attempt number %d--------\n', i);
-[Plabel,Timecost(i)] = coregMRTSC(A,mu,lambda,numClust);
+[Plabel,Timecost(i)] = MxCRTSA(A,gamma,lambda,numClust);
    fprintf('----Mx-CRTSA end, attempt number %d--------\n', i);
 acc(i) = ClusteringMeasure(Plabel, truth);
         [~, nmi(i),~] = compute_nmi(truth,Plabel);

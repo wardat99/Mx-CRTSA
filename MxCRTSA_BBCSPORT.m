@@ -5,13 +5,13 @@ close all
 addpath('dataset','functions');
 load('myBBCSPORT.mat')
 
-mu = 0.3;           %best at  0.3  nmi=0.9893
+gamma = 0.3;           %best at  0.3  nmi=0.9893
 lambda=0.02;        %best at  0.02  
 
 for i=1:10
     
     fprintf('----Mx-CRTSA start, attempt number %d--------\n', i);
-[Plabel,Timecost(i)] = coregMRTSC(A,mu,lambda,numClust);
+[Plabel,Timecost(i)] = MxCRTSA(A,gamma,lambda,numClust);
    fprintf('----Mx-CRTSA end, attempt number %d--------\n', i);
 acc(i) = ClusteringMeasure(Plabel, truth);
         [~, nmi(i),~] = compute_nmi(truth,Plabel);

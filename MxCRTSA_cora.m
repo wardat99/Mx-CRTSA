@@ -5,13 +5,13 @@ warning off;
 addpath('dataset','functions');
 load('myCora292.mat')
 
-mu = 0.04;      %best at  0.04  nmi= 1
+gamma = 0.04;      %best at  0.04  nmi= 1
 lambda = 0.1;      %best at  0.1
 
 for i=1:10
     
     fprintf('----Mx-CRTSA start, attempt number %d--------\n', i);
-[Plabel,Timecost(i)] = coregMRTSC(A,mu,lambda,numClust);
+[Plabel,Timecost(i)] = MxCRTSA(A,gamma,lambda,numClust);
    fprintf('----Mx-CRTSA end, attempt number %d--------\n', i);
 acc(i) = ClusteringMeasure(Plabel, truth);
         [~, nmi(i),~] = compute_nmi(truth,Plabel);
