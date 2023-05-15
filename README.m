@@ -1,6 +1,5 @@
 # Mx-CRTSA
 The source code for our paper "Discovering Community Structure in Multiplex Networks via a Co-Regularized Robust Tensor-Based Spectral Approach".
-
 Available [here](https://www.mdpi.com/2076-3417/13/4/2514).
 
 # Required toolboxes:
